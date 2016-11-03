@@ -1,0 +1,38 @@
+<html>
+	<head>
+		{% load staticfiles %}
+	</head>
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" /> -->
+		<style>
+			body {
+				background-image: url("{% static 'index.jpeg' %}");
+				text-align: center;
+				background-size: cover;
+				background-position: center;
+				color: white;
+				font-family: helvetica;
+			}
+			input {
+      	border: 2;
+      	padding: 10px;
+      	font-size: 18px;
+				margin-top: 100px;
+    	}
+			input[type="submit"] {
+				background: red;
+				color: white;
+			}
+
+
+		</style>
+	<body>
+		<form action='/auth' method='POST'>
+			{% csrf_token %}
+		  <!--<img src="{% static 'ss.jpeg' %}"/> -->
+			<input type="text" name="NAME" id="NAME" placeholder="Name" /></br>
+			<input type="text" name="ROLL_NO" id="ROLL_NO" placeholder="Roll No" /></br>
+			<input type="password" name="PASSWORD" id="PASSWORD" placeholder="Password" /></br>
+			<input type="submit" value="REGISTER"/>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<style>
+		#questions a {
+			color: red;
+			text-decoration: none;
+			text-align: center;
+			font-size: 50px;
+
+		}
+		a {
+			color: red;
+			text-decoration: none;
+			text-align: center;
+			font-size: 50px;
+		}
+
+	</style>
+	<body>
+		<div id="questions" style="height:100px;width:50px">
+		{% for i in value %}
+			<a href="/question/{{i.number}}">{{i.title}}</br></a>
+			{% endfor %}
+		</div>
+	</body>
+</html>

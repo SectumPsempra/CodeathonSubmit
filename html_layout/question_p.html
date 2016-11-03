@@ -1,0 +1,36 @@
+<html>
+	<a href="/question_list"><button><< Back to Problems</button></a>
+	<head>
+			<style>
+				button {
+					color : #379A18;
+					background-color: lightgray;
+					font-size: 25px;
+					margin-bottom: 20px;
+					margin-left: 950px;
+				}
+				form {
+					padding-bottom: 90px;
+				}
+				input[type="submit"] {
+					background-color:  gray;
+					color: white;
+					text-align: right;
+					margin-top: 20px;
+					font-size: 40px;
+				}
+			</style>
+	</head>
+	<body>
+		<h2>nameq</h2>
+		{{myqsn.number}} {{myqsn.data|safe}}
+		{{user}}
+		<form action="/next" method="POST">
+			{% csrf_token %}
+			<center><textarea name="ans" id="ans" maxlength="5000" rows="40"	cols="120" placeholder="Enter your code here">{{prev}}</textarea></center>
+			</br>
+			<input type="Hidden" name="number" value="{{myqsn.number}}"/>
+			<center><input type="Submit" value="SUBMIT"/></center>
+		</form>
+	</body>
+</html>
